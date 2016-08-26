@@ -38,7 +38,7 @@ Add the script tags:
 <!--end dependencies-->
 
 <!--Angular UI Tour-->
-<script src="bower_components/angular-ui-tour/dist/angular-ui-tour.js"></script>
+<script src="bower_components/angular-ui-tour/dist/angular-ui-tour-kor.js"></script>
 ```
 
 **Note:** You _must_ use the unminified version of angular smooth scroll since there is a known issue with the minified version.
