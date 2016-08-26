@@ -42,15 +42,15 @@ module.exports = function (grunt) {
 
         concat: {
             angular: {
-                src: ['<%= config.app %>/angular-ui-tour.js', '<%= config.app %>/**/*.js', 'lib/*.js'],
-                dest: '<%= config.dist %>/angular-ui-tour.js'
+                src: ['<%= config.app %>/angular-ui-tour-kor.js', '<%= config.app %>/**/*.js', 'lib/*.js'],
+                dest: '<%= config.dist %>/angular-ui-tour-kor.js'
             }
         },
 
         uglify: {
             angular: {
-                src: '<%= config.dist %>/angular-ui-tour.js',
-                dest: '<%= config.dist %>/angular-ui-tour.min.js'
+                src: '<%= config.dist %>/angular-ui-tour-kor.js',
+                dest: '<%= config.dist %>/angular-ui-tour-kor.min.js'
             }
         },
 
