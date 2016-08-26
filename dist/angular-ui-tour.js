@@ -1337,13 +1337,10 @@ angular.module('bm.uiTour').run(['$templateCache', function($templateCache) {
     "    <div class=\"popover-content tour-step-content\" ng-bind-html=\"tourStep.trustedContent\"></div>\n" +
     "    <div class=\"popover-navigation tour-step-navigation\">\n" +
     "        <div class=\"btn-group\">\n" +
-    "            <button class=\"btn btn-sm btn-default\" ng-if=\"tourStep.isPrev()\" ng-click=\"tour.prev()\">&laquo; Prev</button>\n" +
-    "            <button class=\"btn btn-sm btn-default\" ng-if=\"tourStep.isNext()\" ng-click=\"tour.next()\">Next &raquo;</button>\n" +
-    "            <button class=\"btn btn-sm btn-default\" data-role=\"pause-resume\" data-pause-text=\"Pause\"\n" +
-    "                    data-resume-text=\"Resume\" ng-click=\"tour.pause()\">Pause\n" +
-    "            </button>\n" +
+    "            <button class=\"btn btn-sm btn-default\" ng-if=\"tourStep.isPrev()\" ng-click=\"tour.prev()\">&laquo; 이전</button>\n" +
+    "            <button class=\"btn btn-sm btn-default\" ng-if=\"tourStep.isNext()\" ng-click=\"tour.next()\">다음 &raquo;</button>\n" +
     "        </div>\n" +
-    "        <button class=\"btn btn-sm btn-default\" data-role=\"end\" ng-click=\"tour.end()\">End tour</button>\n" +
+    "        <button class=\"btn btn-sm btn-default\" data-role=\"end\" ng-click=\"tour.end()\">닫기</button>\n" +
     "    </div>\n" +
     "</div>\n" +
     "");
