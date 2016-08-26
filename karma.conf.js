@@ -25,7 +25,7 @@ module.exports = function(config) {
             'bower_components/angular-mocks/angular-mocks.js',
             'bower_components/angular-route/angular-route.js',
             //endbower
-            'app/angular-ui-tour.js',
+            'app/angular-ui-tour-kor.js',
             'app/**/*.js',
             'lib/**/*.js',
             'test/spec/**/*.js',
