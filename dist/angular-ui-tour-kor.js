@@ -798,6 +798,14 @@
             return getCurrentStep();
         };
 
+        self.getPrevStep = function () {
+            return getPrevStep();
+        };
+
+        self.getNextStep = function () {
+            return getNextStep();
+        };
+
         /**
          * @typedef number TourStatus
          */
