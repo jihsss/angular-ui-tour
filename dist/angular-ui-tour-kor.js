@@ -1345,7 +1345,7 @@ angular.module('bm.uiTour').run(['$templateCache', function($templateCache) {
     $templateCache.put("tour-step-template.html",
         "<h3 class=\"popover-title tour-step-title\" ng-bind-html=\"tourStep.trustedTitle\"></h3>\n" +
         "<div class=\"popover-content tour-step-content\">\n" +
-        "    <div class=\"popover-content tour-step-content\" ng-bind-html=\"tourStep.trustedContent\"></div>\n" +
+        "    <div ng-bind-html=\"tourStep.trustedContent\"></div>\n" +
         "    <div class=\"popover-navigation tour-step-navigation\">\n" +
         "        <div class=\"btn-group\">\n" +
         "            <button class=\"btn btn-sm btn-default\" ng-if=\"tourStep.isPrev()\" ng-click=\"tour.prev()\">&laquo; 이전</button>\n" +
