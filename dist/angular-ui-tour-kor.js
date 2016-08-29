@@ -1232,6 +1232,8 @@
                         TourHelpers.setRedirect(step, ctrl, 'onPrev', step.prevPath, step.prevStep);
                     }
 
+                    //for HTML title
+                    step.trustedTitle = $sce.trustAsHtml(step.title);
                     //for HTML content
                     step.trustedContent = $sce.trustAsHtml(step.content);
 
@@ -1286,6 +1288,7 @@
                 });
 
                 element.addClass([step.config('popupClass'), 'popover'].join(' '));
+                element.addClass('tour-step');
 
                 if (step.config('fixed')) {
                     element.css('position', 'fixed');
@@ -1330,28 +1333,28 @@
 }(angular.module('bm.uiTour')));
 
 angular.module('bm.uiTour').run(['$templateCache', function($templateCache) {
-  $templateCache.put("tour-step-popup.html",
-    "<div class=\"arrow\"></div>\n" +
-    "\n" +
-    "<div class=\"popover-inner tour-step-inner\">\n" +
-    "    <h3 class=\"popover-title tour-step-title\" ng-bind=\"uibTitle\" ng-if=\"uibTitle\"></h3>\n" +
-    "    <div class=\"popover-content tour-step-content\"\n" +
-    "         uib-tooltip-template-transclude=\"originScope().tourStep.config('templateUrl') || 'tour-step-template.html'\"\n" +
-    "         tooltip-template-transclude-scope=\"originScope()\"></div>\n" +
-    "</div>\n" +
-    "");
-  $templateCache.put("tour-step-template.html",
-    "<div>\n" +
-    "    <div class=\"popover-content tour-step-content\" ng-bind-html=\"tourStep.trustedContent\"></div>\n" +
-    "    <div class=\"popover-navigation tour-step-navigation\">\n" +
-    "        <div class=\"btn-group\">\n" +
-    "            <button class=\"btn btn-sm btn-default\" ng-if=\"tourStep.isPrev()\" ng-click=\"tour.prev()\">&laquo; 이전</button>\n" +
-    "            <button class=\"btn btn-sm btn-default\" ng-if=\"tourStep.isNext()\" ng-click=\"tour.next()\">다음 &raquo;</button>\n" +
-    "        </div>\n" +
-    "        <button class=\"btn btn-sm btn-default\" data-role=\"end\" ng-click=\"tour.end()\">닫기</button>\n" +
-    "    </div>\n" +
-    "</div>\n" +
-    "");
+    $templateCache.put("tour-step-popup.html",
+        "<div class=\"arrow\"></div>\n" +
+        "\n" +
+        "<div class=\"popover-inner tour-step-inner\">\n" +
+        "    <div uib-tooltip-template-transclude=\"originScope().tourStep.config('templateUrl') || 'tour-step-template.html'\"\n" +
+        "         tooltip-template-transclude-scope=\"originScope()\"></div>\n" +
+        "</div>\n" +
+        "");
+
+    $templateCache.put("tour-step-template.html",
+        "<h3 class=\"popover-title tour-step-title\" ng-bind-html=\"tourStep.trustedTitle\"></h3>\n" +
+        "<div class=\"popover-content tour-step-content\">\n" +
+        "    <div class=\"popover-content tour-step-content\" ng-bind-html=\"tourStep.trustedContent\"></div>\n" +
+        "    <div class=\"popover-navigation tour-step-navigation\">\n" +
+        "        <div class=\"btn-group\">\n" +
+        "            <button class=\"btn btn-sm btn-default\" ng-if=\"tourStep.isPrev()\" ng-click=\"tour.prev()\">&laquo; 이전</button>\n" +
+        "            <button class=\"btn btn-sm btn-default\" ng-if=\"tourStep.isNext()\" ng-click=\"tour.next()\">다음 &raquo;</button>\n" +
+        "        </div>\n" +
+        "        <button class=\"btn btn-sm btn-default\" data-role=\"end\" ng-click=\"tour.end()\">닫기</button>\n" +
+        "    </div>\n" +
+        "</div>\n" +
+        "");
 }]);
 
 (function (window) {
